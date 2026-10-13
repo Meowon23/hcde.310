@@ -70,7 +70,8 @@ Bonus: Snippet 5 prints something *before* it crashes. What, and why does it sti
 
 Pick one snippet. Write your guess first, then ask your tutor. Paste the chat (or a share link) below.
 
-- Snippet #:
-- Our guess before asking:
-- Chat:
-- Did it give you too much? What did you do?
+- Snippet #: 5 
+- Our guess before asking: the print(longest) should be return longest
+- Chat: https://claude.ai/chat/bfbcdfaa-16f7-446f-9bc0-c7773e2d9860
+- Did it give you too much? What did you do? I asked it to explain it more easily and it
+gave me a scenario to think on, and or kind of error I asked it for what are some examples of error that are possible and it explained a few so I could figure out the correct type.
