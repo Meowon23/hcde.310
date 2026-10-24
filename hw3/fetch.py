@@ -27,7 +27,8 @@ term = input("Search the Art Institute for: ")
 
 url = "https://api.artic.edu/api/v1/artworks/search"      
 params = {"q": term, "fields": FIELDS}  
-response = requests.get(url, params=params)
+headers = {"AIC-User-Agent": "HCDE310 student project"}
+response = requests.get(url, params=params, headers=headers)
 if response.status_code != 200:
     print(f"Sorry, there was a problem: {response.status_code} {response.reason}")
     exit()

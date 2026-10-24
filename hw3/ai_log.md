@@ -73,7 +73,7 @@ The or defaults match your printing loop, so the file never contains None.
 
 ## 3. Predict, then compare
 *before you run the function, write what you think the file will contain for the sample data (`check.py` uses it) or for your search. Then paste what it actually contains. (A wrong prediction gets full credit. Don't edit it after running.)*
-Lion (One of a Pair, South Pedestal) | Edward Kemeys | 1893
+Lion (One of a Pair, South Pedestal) - Edward Kemeys (1893) - Chicago - Bronze with green patina - 261.7 × 114.2 × 287 cm (103 × 45 × 113 in.)
 i always get Sorry, there was a problem: 403 Forbidden? when i tried "lion" or "123456789"
 
 I asked AI. Response was...
@@ -92,8 +92,15 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 https://api.artic.edu/api/v1/artworks/search?q=cat
 If the browser shows a wall of JSON, the API is up and it’s your Python request that’s being rejected. If the browser also gets blocked, it’s your network or the museum.
 
-5.Ask your instructor or TA now. The starter was supposed to work as is, and other students may have the same problem. Send them this: “I get 403 Forbidden from api.artic.edu with the starter code. check.py passes. Is there a fix for the live run?” It’s due Monday at 10am, so don’t wait until the weekend.
-??
+5.Ask your instructor or TA now. The starter was supposed to work as is, and other students may have the same problem. Send them this: “I get 403 Forbidden from api.artic.edu with the starter code. check.py passes. Is there a fix for the live run?” It’s due Monday at 10am, so don’t wait until the weekend...
+
+*****
+After I submitted, I saw message in slack and I realized it was about the header so I copied and pasted the code on to fetch.py, and input "lion" and it came out as what I expected it to print!!!
+it printed:
+Lion (One of a Pair, South Pedestal) - Edward Kemeys (1893) - Chicago - Bronze with green patina - 261.7 × 114.2 × 287 cm (103 × 45 × 113 in.)
+Lion Hunt - Eugène Delacroix (1860–61) - France - Oil on canvas - 76.5 × 98.5 cm (30 × 38 1/2 in.); Framed: 105.5 × 125.8 cm (41 1/2 × 49 1/2 in.)
+..... and so on and so forth
+
 
 ## 4. What surprised me
 *one or two sentences. Where were you wrong, or what did you learn? For example: "I thought a missing artist would print `none`, but `.get` gave the fallback `unknown`."*
