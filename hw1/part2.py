@@ -18,7 +18,6 @@ titles = [
 
 for i in range(len(titles)):
     print(f"{i + 1}. {titles[i]}")
-
 print("Titles:", len(titles))
 
 count = 0 

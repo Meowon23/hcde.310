@@ -25,3 +25,4 @@ if response.status_code == 200:
     print(f"Date: {first_photo.get('date')}")
 else:
     print(f"Error status code received: {response.status_code}")
+

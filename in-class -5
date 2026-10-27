@@ -1,0 +1,41 @@
+import json
+with open("aic_sample.json") as f:
+    data = json.load(f)
+
+print(type(data))
+results = data["data"]
+print(type(results))
+first = results[0]
+
+first_title = data["data"][0]["title"]
+print(first_title)
+
+#total = pagination[0] 
+print(data["pagination"]["total"])
+
+second_title = data["data"][1]["title"]
+print(second_title)
+first_artist = data["data"][0]["artist_title"]
+print(first_artist)
+
+print(data["data"][0]["image_id"])
+
+
+art = data["data"][2]
+
+if art["artist_title"]:
+    print("By " + art["artist_title"])
+else:
+    print("No artist found")
+
+#python3 -m venv .venv
+#source .venv/bin/activate
+#python -m pip install requests
+#/usr/local/bin/python3 -m pip install requests
+
+url = "https://api.artic.edu/api/v1/artworks/search"
+import requests
+r = requests.get(url, params={"q": "cats"})
+if r.status_code == 200:
+    data = r.json()
+print(data)
