@@ -8,8 +8,7 @@ Docs: https://openlibrary.org/developers/api
 
 ## Setup
 
-There is no API key and no account. only need Python and `requests`.
-
+There is no API key or account required to use the Open Library Search API. You only need Python and the requests library. I tested the example using Python and requests.
 ```
 pip install requests
 ```
@@ -79,7 +78,7 @@ Output (trimmed to the f  irst three `subject` values; the real response may lis
 ```
 
 How to read it:
-- `numFound` is how many results matched in total (112), not how many came back (1, because of `limit=1`).
+- `numFound` is how many results matched in total (48299), not how many came back (1, because of `limit=1`).
 - `docs` is the list of results. Each one is a **work** (the book in general, not one specific printing).
 - `author_name` and `subject` are **lists**, even when there is only one author.
 - `cover_i` is a cover image ID. According to the Open Library covers docs, you can turn it into an image URL like `https://covers.openlibrary.org/b/id/<cover_i>-M.jpg` (`-S`, `-M`, `-L` for sizes).
@@ -88,21 +87,19 @@ How to read it:
 Gotchas
 ## Gotchas
 
-- Missing data:* Some books lack a cover, subject, or year. Use `doc.get("cover_i")`, not `doc["cover_i"]`, so your code doesn't crash.
-- Too many matches:** Searching `dune` returned 48,299 results. Use `limit` and `fields`, and check the title and author before trusting the first result.
-- 
-Rate limits:** No key is needed, but heavy use can get you slowed or blocked. Send a `User-Agent` and don't loop requests quickly. Check the docs for current limits.
-- 
-Confusing docs:** The API info is spread across several pages. Start with `search.json` and change one parameter at a time.
+Missing data: Some books lack a cover, subject, or publication year. Use doc.get("cover_i") instead of doc["cover_i"] to avoid errors.
+
+Too many matches: Searching for "dune" returned 48,299 results. Use limit and fields to narrow results, and check the title and author before trusting the first result.
+
+Rate limits: No API key is needed, but excessive requests may be slowed or blocked. Include a User-Agent and avoid sending requests too quickly.
+
+Confusing documentation: API information is spread across multiple pages. Start with search.json and experiment with one parameter at a time.
 
 Design angle
-
 Project idea: A "find a book I can actually read" tool for students and people on a tight budget. The user searches by topic or title, and the app shows covers, authors, and publication years, then links out to the Open Library page for each book so they can see whether it can be borrowed or read online.
 
 Ethical / UX consideration: 
-Open Library's data is community-maintained, 
-so don't hide books with missing covers or subjects. Show a placeholder 
-instead, and link to the source page rather than promising a book is available.
+Open Library's data is community-maintained, so some books may have incomplete or inaccurate information. Designers should avoid hiding books just because they have missing covers or subjects. Instead, use placeholder images and clearly communicate when information is unavailable. Also, link to the original Open Library page rather than promising that a book is available to borrow or read.
 
 
 AI use
